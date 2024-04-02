@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const Email = '1'
+    const Code = '111'
+    resetPasswordInfos = [{ Email: '1', Code: '111'}, { Email: '2', Code: '222'}, { Email: '3', Code: '333'}]
+
+    const index = resetPasswordInfos.findIndex((item) => item.Email === Email)
+
+    if (index === -1 || resetPasswordInfos[index].Code !== Code || resetPasswordInfos[index].ExpiresAt < Date.now()) {
+      console.log(resetPasswordInfos)
+      if (index !== -1) resetPasswordInfos.splice(index, 1)
+      console.log(resetPasswordInfos)
+      console.log("invalid or expired code")
+    }
+    console.log('valided')
+  </script>
+</body>
+
+</html>
