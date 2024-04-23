@@ -1,2 +1,6 @@
-Source/node_modules
+Database/*
+node_modules
+.env
+package.json
 package-lock.json
+test.html
